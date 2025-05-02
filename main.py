@@ -10,7 +10,6 @@ pip3 install -r requirements.txt
 
 This will install the packages from requirements.txt for this project.
 '''
-from wsgiref.validate import validator
 
 # +----------------------------------------------------------------------------+
 # | CARDUI WORKS v1.0.0
@@ -22,7 +21,7 @@ from wsgiref.validate import validator
 # +----------------------------------------------------------------------------+
 # | Author.......: Vanessa Reteguín <vanessa@reteguin.com>
 # | First release: April 30th, 2025
-# | Last update..: April 30th, 2025
+# | Last update..: May 1st, 2025
 # | WhatIs.......: Forms_Flask-WTF - Main
 # +----------------------------------------------------------------------------+
 
@@ -37,8 +36,7 @@ from flask_bootstrap import Bootstrap5
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-import email_validator
-from wtforms.validators import DataRequired, InputRequired, Email, Length, Regexp
+from wtforms.validators import InputRequired, Email, Length, Regexp
 
 
 # ------------------------- Classes -------------------------
@@ -71,7 +69,7 @@ app.secret_key = "any-string-you-want-just-keep-it-secret"
 
 bootstrap = Bootstrap5(app)
 
-# --------------------------- Code ----------------------------
+# ----------------------- Flask routes ------------------------
 @app.route("/")
 def home():
     return render_template('index.html')
